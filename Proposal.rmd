@@ -97,20 +97,37 @@ all.movements <- sportvu_convert_json(file = "0021500001.json")
 ```{r}
 #generate sample for us to work with
 smple <- rjson::fromJSON(file = "0021500504.json")
+full <- rjson::fromJSON(file = "0021500504.json")
 smple$events <- smple$events[c(1:10)]
 #smple with 10 events is created, much smaller so we can run more tests easily
 
-# #Just some fiddling around
-# #Playing with creating list of moments 
-# #returns a list called 'moments' of all moments of all events
-# for (i in 1:length(smple$events)) {
-#   vector <- c(vector, smple$events[[i]][c('moments')])
-# }
-# vector <- vector[c(-1)]
-# moments <- vector
 
-# df <- data.frame()
-# df <- c()
+```
+
+```{r}
+#Just some fiddling around
+#Playing with creating list of moments
+#returns a list called 'moments' of all moments of all events
+for (i in 1:length(smple$events)) {
+  vector <- c(vector, smple$events[[i]][c('moments')])
+}
+vector <- vector[c(-1)]
+moments <- vector
+
+hello <- smple$events[[1]][[c('moments')]]
+
+
+
+
+
+## WORKING ON CREATING DATA FRAME
+df <- data.frame()
+colnames(df) <- c("")
+#this gets player data and ball data from one moment in the json file
+for(lst in smple$events[[1]][[c('moments')]][[1]][[6]]) {
+  print(lst)
+}
+
 ```
 
 
