@@ -46,7 +46,7 @@ library(tidyverse)       # Load libraries you always use here.
 library(kableExtra)
 library(cowplot)
 library(jsonlite)
-# library(rjson)
+library(rjson)
 
 set.seed(18)             # Make random results reproducible
 theme_set(theme_bw())    # Uses clean ggplot2 theme
@@ -79,24 +79,35 @@ I will be looking at tracking data to determine where players of the defensive t
 **What data do you plan to use? (Provide a link to the page or pages where this is contained or described). Scrape/read-in the data here. Describe the origin of the data, who collected it, how large is it (# rows, columns, tables, file size, etc as appropriate)?**
 
 ```{r}
-# #run once to put data into R
-# #data can be found in data.zip from Github to get two .json files
-# source("_functions.R")
-# 
-# #tried the exact data that he used in the specific webpage: still NAs
-# #http://projects.rajivshah.com/sportvu/EDA_NBA_SportVu.html
-# all.movements <- sportvu_convert_json(file = "0021500001.json")
+#run once to put data into R
+#data can be found in data.zip from Github to get two .json files
+source("our_functions.R")
+
+#tried the exact data that he used in the specific webpage: still NAs
+#http://projects.rajivshah.com/sportvu/EDA_NBA_SportVu.html
+all.movements <- sportvu_convert_json(file = "0021500001.json")
 # 
 # #a random file (01.02.2016.DEN.at.GSW.7z) taken from 
 # #https://github.com/rajshah4/BasketballData/tree/master/2016.NBA.Raw.SportVU.Game.Logs
 # # still has NAs
 # all.movements.2 <- sportvu_convert_json(file = "0021500504.json")
-# #result <- rjson::fromJSON(file = "0021500504.json")
+
 ```
 
 ```{r}
-# # Trying to take a look at the json file 
-# df <- result$events[[1]]$moments
+#generate sample for us to work with
+smple <- rjson::fromJSON(file = "0021500504.json")
+smple$events <- smple$events[c(1:10)]
+#smple with 10 events is created, much smaller so we can run more tests easily
+
+# #Just some fiddling around
+# #Playing with creating list of moments 
+# #returns a list called 'moments' of all moments of all events
+# for (i in 1:length(smple$events)) {
+#   vector <- c(vector, smple$events[[i]][c('moments')])
+# }
+# vector <- vector[c(-1)]
+# moments <- vector
 ```
 
 
