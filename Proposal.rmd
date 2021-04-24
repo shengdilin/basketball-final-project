@@ -81,7 +81,7 @@ I will be looking at tracking data to determine where players of the defensive t
 ```{r}
 #run once to put data into R
 #data can be found in data.zip from Github to get two .json files
-source("our_functions.R")
+source("_functions.R")
 
 #tried the exact data that he used in the specific webpage: still NAs
 #http://projects.rajivshah.com/sportvu/EDA_NBA_SportVu.html
@@ -108,6 +108,9 @@ smple$events <- smple$events[c(1:10)]
 # }
 # vector <- vector[c(-1)]
 # moments <- vector
+
+# df <- data.frame()
+# df <- c()
 ```
 
 
