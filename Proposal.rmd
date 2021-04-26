@@ -85,79 +85,16 @@ source("_functions.R")
 
 #tried the exact data that he used in the specific webpage: still NAs
 #http://projects.rajivshah.com/sportvu/EDA_NBA_SportVu.html
-all.movements <- sportvu_convert_json(file = "0021500001.json")
+all.movements <- sportvu_convert_json(file = "data/0021500001.json")
 # 
 # #a random file (01.02.2016.DEN.at.GSW.7z) taken from 
 # #https://github.com/rajshah4/BasketballData/tree/master/2016.NBA.Raw.SportVU.Game.Logs
 # # still has NAs
 # all.movements.2 <- sportvu_convert_json(file = "0021500504.json")
 
-```
-
-```{r}
-#generate sample for us to work with
-smple <- rjson::fromJSON(file = "0021500504.json")
-full <- rjson::fromJSON(file = "0021500504.json")
-smple$events <- smple$events[c(1:10)]
-#smple with 10 events is created, much smaller so we can run more tests easily
-
+play2 <- all.movements %>% filter(event.id == 2)
 
 ```
-
-```{r}
-#Just some fiddling around
-#Playing with creating list of moments
-#returns a list called 'moments' of all moments of all events
-for (i in 1:length(smple$events)) {
-  vector <- c(vector, smple$events[[i]][c('moments')])
-}
-vector <- vector[c(-1)]
-moments <- vector
-
-hello <- smple$events[[1]][[c('moments')]]
-
-
-
-
-
-## WORKING ON CREATING DATA FRAME
-df <- data.frame(matrix(ncol = 5, nrow = 0))
-#this gets player data and ball data from one moment in the json file
-
-#add in data from moments
-# #TAKES TOO LONG
-# for(x in 1:length(smple$events)) {
-#   for(y in 1:length(smple$events[[x]][[c('moments')]])) {
-#       for(lst in smple$events[[x]][[c('moments')]][[y]][[6]]) {
-#         d <- data.frame(t(lst))
-#         df <- rbind(d, df)
-#       }
-#     }
-# }
-
-
-#works, but because data size is small
-#upper one tries to do it with our sample data with 10 events,
-#but it gets overloaded because it has to recreate every time
-#kinda confused on how to make this work with apply functions
-#or instead we can attempt to change the functions in his functions file to work
-
-for(x in 1:length(smple$events)) {
-  for(lst in smple$events[[x]][[c('moments')]][[1]][[6]]) {
-        d <- data.frame(t(lst))
-        df <- rbind(d, df)
-    }
-}
-#name columns
-colnames(df) <- c("teamId", "playerId", "xloc", "yloc", "zloc")
-
-#print df
-df
-```
-
-
-
-
 
 
 # Exploratory Data Analysis
@@ -165,6 +102,13 @@ df
 **Explore your data with `ggpairs` or as you think is appropriate. If using `ggpairs`, no more than 6 variables should be included at a time. `ggduo` can be used to fill in the "off-diagonal" pairs in an overall scatterplot matrix. If you have too many columns (say, over 18) to make this meaningful, select at least 12 columns to explore, including your candidate response variable or variables. This does not need to be submitted as part of your proposal, but you'll need to do this eventually (if your project is based on data).** 
 
 
+
+```{r}
+## Mcshance said this was good enough for the proposal
+# do something with play2
+glimpse(play2)
+
+```
 
 # Methods
 

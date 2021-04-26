@@ -5,7 +5,7 @@ library(jsonlite)
 library(dplyr)
 library(sp)
 
-factorconvert <- function(f){as.numeric(levels(f))[f]}
+factorconvert <- function(f){as.numeric}
 
 sportvu_convert_json <- function (file.name)
 {
@@ -67,7 +67,7 @@ sportvu_convert_json <- function (file.name)
   ball.movement$lastname <- "ball"
   ball.movement$firstname <- NA
   all.movements <- rbind(home.movements, away.movements,ball.movement)
-  all.movements[, 6:13] <- lapply(all.movements[, 6:13], factorconvert)
+  all.movements[, 6:13] <- lapply(all.movements[, 6:13], as.numeric)
   all.movements <- as.data.frame(all.movements) %>% dplyr::arrange(quarter,desc(game_clock),x_loc,y_loc)
   return(all.movements)
 }
