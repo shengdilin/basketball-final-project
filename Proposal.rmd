@@ -121,13 +121,38 @@ hello <- smple$events[[1]][[c('moments')]]
 
 
 ## WORKING ON CREATING DATA FRAME
-df <- data.frame()
-colnames(df) <- c("")
+df <- data.frame(matrix(ncol = 5, nrow = 0))
 #this gets player data and ball data from one moment in the json file
-for(lst in smple$events[[1]][[c('moments')]][[1]][[6]]) {
-  print(lst)
-}
 
+#add in data from moments
+# #TAKES TOO LONG
+# for(x in 1:length(smple$events)) {
+#   for(y in 1:length(smple$events[[x]][[c('moments')]])) {
+#       for(lst in smple$events[[x]][[c('moments')]][[y]][[6]]) {
+#         d <- data.frame(t(lst))
+#         df <- rbind(d, df)
+#       }
+#     }
+# }
+
+
+#works, but because data size is small
+#upper one tries to do it with our sample data with 10 events,
+#but it gets overloaded because it has to recreate every time
+#kinda confused on how to make this work with apply functions
+#or instead we can attempt to change the functions in his functions file to work
+
+for(x in 1:length(smple$events)) {
+  for(lst in smple$events[[x]][[c('moments')]][[1]][[6]]) {
+        d <- data.frame(t(lst))
+        df <- rbind(d, df)
+    }
+}
+#name columns
+colnames(df) <- c("teamId", "playerId", "xloc", "yloc", "zloc")
+
+#print df
+df
 ```
 
 

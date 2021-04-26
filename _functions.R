@@ -11,7 +11,7 @@ sportvu_convert_json <- function (file.name)
 {
   # Much of the process is from http://tcbanalytics.com/blog/nba-movement-data-R.html#.VnX8d4RiOCQ
   # Takes a json and converts it into a dataframe
-  the.data.file<-fromJSON(file.name)
+  the.data.file<-jsonlite::fromJSON(file.name)
   ##Get the sports vu data
   moments <- the.data.file$events$moments
   
