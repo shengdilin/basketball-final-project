@@ -38,8 +38,7 @@ knitr::opts_chunk$set(   # This is for later! Don't worry about it now.
   message = FALSE,       # Don't show messages (less serious warnings).
   fig.align = "center",  # Center figures.
   fig.width = 5,         # Size figures nicely by default
-  fig.height = 3,        # Size figures nicely by default
-  dev = "cairo_pdf",     # Enable this to use custom fonts
+  fig.height = 3,
   singlespacing = TRUE   # Makes code single spaced and returns to 1.5
 )
 library(tidyverse)       # Load libraries you always use here.
@@ -114,24 +113,24 @@ glimpse(play2)
 
 **What statistical methods will you be using? (Simulation counts). Will you be assessing models by technique?**
 
-
+We will be using similar methods to those employed in decision-making analysis as well as common graph theory analysis.
 
 # US-RESP or US-CLAP
 
 **Which competition would your project be eligible for, do you think? If US-CLAP, describe which course you've seen the method in. If US-RESP, confirm that you have not taken a class that has covered that topic.**
 
-
+Depending on the types of questions we ask and the answers we get, we may be able to be eligible for US-RESP. Otherwise we are eligible for US-CLAP and we have seen the described methods employed in this class.
 
 # Number of group members
 
 **To adequately address this problem, how many people do you think would be needed in a group to address it? (1 to 3 group members is feasible, but again, additional people means the scope of the project needs to expand.)**
 \newline 
-1-3 people all work for me.
+Sunny Lin and Michael Pitts are working together
 
 
 # Would you be willing to join someone else's project? 
 
-Yes, I believe I am working with Sean Dube. 
+We can add one more if somebody wants to join.
 
 
 **Submit this on Gradescope, individually, by Friday at 10pm**
