@@ -5,11 +5,13 @@ taking a look at tracking data for NBA players
 
 ### Data and Functions to read in data
 
-1. https://github.com/rajshah4/BasketballData
+1. https://github.com/rajshah4/BasketballData (Where we receive data)
 
-2. https://github.com/rajshah4/NBA_SportVu
+2. https://github.com/rajshah4/NBA_SportVu (Where we get functions to read in data)
 
-3. https://github.com/karimi-ali/NBA_SportVu (helped fix bug with function to read in data from link 2)
+3. https://github.com/karimi-ali/NBA_SportVu (Helped fix bug in link 2)
+
+4. http://projects.rajivshah.com/sportvu/EDA_NBA_SportVu.html (Some Data Exploration)
 
 ### Papers that McShane told us to Read
 
