@@ -13,6 +13,8 @@ taking a look at tracking data for NBA players
 
 4. http://projects.rajivshah.com/sportvu/EDA_NBA_SportVu.html (Some Data Exploration)
 
+5. https://twitter.com/jonaslindeloev/status/1386472977982705667?s=19 (How to run code and work in R at same time)
+
 ### Papers/Projects that McShane told us to Read
 
 5. http://savvastjortjoglou.com/nba-play-by-play-movements.html
