@@ -21,7 +21,7 @@ taking a look at tracking data for NBA players
 
 6. https://global-uploads.webflow.com/5f1af76ed86d6771ad48324b/5fee0b0aff37459135505f4a_Possession%20Sketches%20Mapping%20NBA%20Strategies.pdf
 
-7. https://www.kaggle.com/jdruzzi/defender-evaluation-one-cut-routes-double-moves
+7. https://www.kaggle.com/jdruzzi/defender-evaluation-one-cut-routes-double-moves (https://www.nfl.com/watch/show/big-data-bowl is the 5-minute talk)
 
 The following are from the MIT SLOAN Conference
 
